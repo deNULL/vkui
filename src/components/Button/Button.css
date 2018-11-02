@@ -1,0 +1,168 @@
+.Button {
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  cursor: default;
+  border: 1px solid transparent;
+  margin: 0;
+  padding: 0;
+  }
+
+  .Button__in {
+    display: flex;
+    align-items: center;
+    }
+
+.Button.Tappable--active {
+  opacity: .6;
+}
+
+.Button[disabled] {
+  opacity: .4;
+  }
+
+  .Button--aln-left .Button__in {
+    justify-content: flex-start;
+    }
+
+  .Button--aln-center .Button__in {
+    justify-content: center;
+    }
+
+  .Button--aln-right .Button__in {
+    justify-content: flex-end;
+    }
+
+.Button--str {
+  display: block;
+  max-width: 100%;
+  flex-grow: 1;
+  }
+
+.Button--str:first-child:last-child {
+  width: 100%;
+  }
+
+  .Button--stretched .Button__in {
+    justify-content: center;
+    }
+
+  .Button__before .Icon--16 {
+      margin-right: 6px;
+      }
+
+  .Button__before .Icon--24 {
+      margin-right: 8px;
+      }
+
+  .Button::before,
+  .Button::after {
+    display: none;
+    }
+
+.Button--lvl-primary {
+  background-color: var(--button_primary_background);
+  color: var(--button_primary_foreground);
+  }
+
+.Button--lvl-secondary {
+  background-color: var(--button_secondary_background);
+  color: var(--button_secondary_foreground);
+  }
+
+.Button--lvl-tertiary {
+  background-color: var(--button_tertiary_background);
+  color: var(--button_tertiary_foreground);
+  }
+
+.Button--lvl-commerce {
+  background-color: var(--button_commerce_background);
+  color: var(--button_commerce_foreground);
+  }
+
+.Button--lvl-outline {
+  background-color: transparent;
+  border: 1px solid var(--button_outline_border);
+  color: var(--button_outline_foreground);
+  }
+
+.Button--sz-m {
+  padding: 0 16px;
+  }
+
+  .Button--sz-m .Button__before {
+    margin-left: -4px;
+    }
+
+  .Button--sz-m .Button__content {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    padding: 7px 0;
+    }
+
+.Button--sz-l {
+  padding: 0 16px;
+  }
+
+  .Button--sz-l .Button__before {
+    margin-left: -4px;
+    }
+
+  .Button--sz-l .Button__content {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    }
+
+.Button--sz-xl {
+  width: 100%;
+  padding: 0 16px;
+  }
+
+  .Button--sz-xl .Button__before {
+    margin-left: -6px;
+    margin-right: 2px;
+    }
+
+  .Button--sz-xl .Button__before ~ .Button__content {
+    padding-left: 0;
+    }
+
+  .Button--sz-xl .Button__in {
+    justify-content: center;
+    }
+
+  .Button--sz-xl .Button__content {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 11px;
+    }
+
+/*
+  iOS
+ */
+.Button--ios {
+  font-family: var(--font-ios);
+  }
+
+.Button--ios.Button--sz-m {
+  border-radius: 15px;
+  }
+
+.Button--ios.Button--sz-l {
+  border-radius: 18px;
+  }
+
+.Button--ios.Button--sz-xl {
+  border-radius: 10px;
+  }
+
+/*
+  Android
+ */
+.Button--android {
+  font-family: var(--font-android);
+  border-radius: 4px;
+  }

@@ -1,0 +1,86 @@
+
+
+.Input {
+  position: relative;
+  line-height: 19px;
+  font-size: 16px;
+  }
+
+.Input--center .Input__el {
+  text-align: center;
+  }
+
+.Input--right .Input__el {
+  text-align: right;
+  }
+
+.Input__el {
+  margin: 0;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  appearance: none;
+  text-overflow: ellipsis;
+  height: 44px;
+  line-height: 19px;
+  font-size: 16px;
+  color: var(--text_primary);
+  padding: 12px;
+  }
+
+.Input__el:disabled {
+  opacity: .6;
+  }
+
+.Input__el::placeholder {
+  color: var(--field_text_placeholder);
+  }
+
+.Input__placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 20px);
+  color: var(--field_text_placeholder);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 12px;
+  box-sizing: border-box;
+  }
+
+.Input--ios {
+  font-family: var(--font-ios);
+  }
+
+  .Input--ios .Input__el {
+    border-radius: 10px;
+    background-color: var(--field_background);
+    border: solid .5px var(--field_border);
+    }
+
+  .Input--ios .Input__el:focus {
+    border-color: var(--accent);
+    }
+
+.Input--android {
+  font-family: var(--font-android);
+  }
+
+  .Input--android .Input__el {
+    border-radius: 4px;
+    background-color: var(--field_background);
+    }
+
+  .Input--android .Input__el:disabled ~ .Input-underline {
+    opacity: .6;
+    }
+
+  .Input--android .Input__el:focus ~ .Input-underline::before {
+    transform: scaleX(1);
+    transition: transform .14s var(--android-easing);
+    }

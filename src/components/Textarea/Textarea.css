@@ -1,0 +1,73 @@
+
+
+.Textarea {
+  position: relative;
+  }
+
+  .Textarea textarea {
+    margin: 0;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    appearance: none;
+    line-height: 19px;
+    font-size: 16px;
+    color: var(--text_primary);
+    padding: 12px;
+    min-height: 86px;
+    max-height: 198px;
+    border: none;
+    }
+
+  .Textarea textarea:disabled {
+    opacity: .6;
+    }
+
+.Textarea--ios {
+
+  }
+
+  .Textarea--ios textarea {
+    font-family: var(--font-ios);
+    border-radius: 10px;
+    background-color: var(--field_background);
+    border: solid .5px var(--field_border);
+    }
+
+    .Textarea--ios textarea::placeholder {
+      color: var(--field_text_placeholder);
+      }
+
+  .Textarea--ios textarea:focus {
+    border-color: var(--accent);
+    }
+
+.Textarea--android {
+
+  }
+
+  .Textarea--android textarea {
+    border-radius: 4px 0 0 4px;
+    background-color: var(--field_background);
+    font-family: var(--font-android);
+    padding-bottom: 4px;
+    }
+
+    .Textarea--android textarea::placeholder {
+      color: var(--field_text_placeholder);
+      }
+
+  .Textarea--android textarea:focus {
+    border-color: var(--accent);
+    }
+
+  .Textarea--android textarea:disabled ~ .Textarea-underline {
+    opacity: .6;
+    }
+
+    .Textarea--android textarea:focus ~ .Textarea-underline::before {
+      transform: scaleX(1);
+      transition: transform .14s var(--android-easing);
+      }

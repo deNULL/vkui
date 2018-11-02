@@ -1,0 +1,74 @@
+.Tappable {}
+
+/**
+ * iOS tappable
+ */
+.Tappable--ios {
+  transition: background-color .15s ease-out;
+  }
+
+.Tappable--ios.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button):not(.PanelHeaderContent__in):not(.ActionSheetItem) {
+  background: var(--separator_common) !important;
+  transition: none;
+  }
+
+/**
+ * Android tappable
+ */
+.Tappable--android {
+  position: relative;
+  transition: background-color .15s ease-out;
+  }
+
+.Tappable--android.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button):not(.PanelHeaderContent__in) {
+  background: var(--android_active_color) !important;
+  }
+
+  /**
+   * Waves container
+   */
+  .Tappable--android .Tappable__waves {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    }
+
+    /**
+     * Wave
+     */
+    .Tappable--android .Tappable__wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      margin: -12px 0 0 -12px;
+      opacity: 0;
+      content: '';
+      border-radius: 50%;
+      background: rgba(127, 127, 127, .1);
+      animation: animation-wave .3s var(--android-easing);
+      }
+
+/**
+ * Animations
+ */
+@keyframes animation-wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(8);
+    opacity: 0;
+  }
+}

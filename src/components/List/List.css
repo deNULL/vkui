@@ -1,0 +1,46 @@
+.List {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: var(--background_content);
+  }
+
+  .List .Cell,
+  .List .Radio {
+    position: relative;
+    z-index: 2;
+    }
+
+/* iOS */
+.List--ios {}
+
+  .List--ios::before,
+  .List--ios::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 1px;
+    content: '';
+    }
+
+  .List--ios::before {
+    top: 0;
+    background: var(--separator_common);
+    }
+
+  .List--ios::after {
+    bottom: 0;
+    background: var(--separator_common);
+    }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .List--ios::before {
+    background: linear-gradient(to bottom, var(--separator_common) 50%, transparent 50%);
+    }
+
+  .List--ios::after {
+    background: linear-gradient(to top, var(--separator_common) 50%, transparent 50%);
+    }
+  }
+

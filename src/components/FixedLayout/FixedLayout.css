@@ -1,0 +1,25 @@
+.FixedLayout {
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  z-index: 3;
+  }
+
+.FixedLayout--top {
+  width: 100%;
+  top: 0;
+  }
+
+.FixedLayout--bottom {
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 0;
+  /*padding-bottom: constant(safe-area-inset-bottom);*/
+  /*padding-bottom: env(safe-area-inset-bottom);*/
+  }
+
+  .Epic .FixedLayout--bottom {
+    padding-bottom: var(--tabbar_height);
+    /*padding-bottom: calc(constant(safe-area-inset-bottom) + var(--tabbar_height));*/
+    /*padding-bottom: calc(env(safe-area-inset-bottom) + var(--tabbar_height));*/
+    }
