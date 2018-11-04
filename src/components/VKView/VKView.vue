@@ -440,6 +440,11 @@ export default {
             nextPanelElement.scrollTop = scrolls[this.state.nextPanel];
           }
           this.waitAnimationFinish(this.pickPanel(this.state.isBack ? this.state.prevPanel : this.state.nextPanel), this.transitionEndHandler);
+        } else {
+          // We need to reset scroll once again because changing 'animated' triggers class changes,
+          // which in turn resets scroll
+          const activePanelElement = this.pickPanel(this.state.activePanel);
+          this.window.scrollTo(0, scrolls[this.state.activePanel]);
         }
       });
     },

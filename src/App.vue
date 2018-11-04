@@ -1,289 +1,93 @@
 <template>
   <div id="app">
-
-  <!-- <Button>
-    <Button @click="activePanel = 'panel3'">Panel 2</Button>
-  </Button> -->
-
-<!-- {{ activePanel }}
-<br>
-{{ popout2 }} -->
-
-<!-- <Root :activeView="activeView"> -->
-<Epic :activeStory="activeStory">
-  <Tabbar slot="tabbar">
-    <TabbarItem>1</TabbarItem>
-    <TabbarItem @click="activeStory = 'view1'" :selected="activeStory == 'view1'" label="12">Два</TabbarItem>
-    <TabbarItem @click="activeStory = 'view2'" :selected="activeStory == 'view2'">
-      <vkui-icon name="done" size="24" />
-    </TabbarItem>
-  </Tabbar>
-  <VKView id="view1"  activePanel="panel13" key="view1">
+<Epic :activeStory="activeView">
+  <VKView id="view1"  :activePanel="activePanel1" key="view1">
     <Panel id="panel13">
       <PanelHeader theme="brand">
-        <HeaderButton slot="addon" :primary="true" @click="activePanel = 'panel2'">
-          Назад
-        </HeaderButton>
-        <HeaderButton slot="left" :primary="true" @click="activePanel = 'panel2'"><vkui-icon name="place" :size="24" /></HeaderButton>
         <!-- test 1 c ооочень длинным заголовком  -->
         <PanelHeaderContent @click="function(){ contextOpened = true; test(); }">
           <vkui-icon slot="aside" name="done" size="16" />
-          Communities {{ activeView }}
+          A {{ activeView }}
         </PanelHeaderContent>
         <div slot="right">right</div>
       </PanelHeader>
       <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
         <Div style="background-color: #eee;">HeaderContext</Div>
       </HeaderContext>
-      {{ activeView }}
-      <Button @click="activeView='view2'">Next View</Button>
-      <Div>
-        <Group>
-          <Header level="2">
-            test
-            <Link slot='aside' @click="test">aside link</Link>
-          </Header>
-          <List>
-            <Cell @click="test">Пятница</Cell>
-            <Cell href="/">Суббота</Cell>
-            <Cell>Воскресение</Cell>
-          </List>
-        </Group>
+      <Button @click="activeView='view2'">To view2</Button>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis vel velit at elementum. Nulla nisl leo, auctor at libero et, facilisis gravida mauris. In vel purus aliquam lacus suscipit pulvinar et sit amet felis. Integer vel semper dui. Proin posuere, nunc a mattis mattis, arcu nunc hendrerit nisl, non consequat lorem mauris id mi. Morbi condimentum eros consectetur luctus placerat. Aliquam feugiat turpis et hendrerit rhoncus. Proin sed ullamcorper mi. Vestibulum cursus cursus dolor, quis dictum neque pharetra ut. Morbi eu efficitur mi, vitae lacinia metus. Praesent viverra est sagittis nibh tempus pellentesque. Mauris auctor, purus vel consequat aliquet, nibh mi venenatis eros, ac fermentum nisi elit mollis neque. Vivamus massa eros, laoreet at nisl tristique, sodales sollicitudin purus. Curabitur laoreet nunc nisi, lobortis finibus purus pellentesque at. Phasellus ornare, nisl nec faucibus auctor, tellus elit fermentum tortor, id mattis sem augue sed ligula. Duis malesuada dictum nisi ac gravida.
 
-        <Group title="Переходы">
-          <List>
-            <Cell :expandable="true">Учетная запись</Cell>
-            <Cell>Основные</Cell>
-          </List>
-        </Group>
+Etiam congue turpis ut varius dapibus. Nulla hendrerit lectus sit amet urna faucibus malesuada. Etiam ac leo sed sapien tempor pretium et vel tellus. Sed sit amet ipsum congue, laoreet nibh in, congue odio. Nunc lobortis velit nisi, eu vulputate nunc volutpat sit amet. Aliquam suscipit sem dui, ut pretium nunc egestas et. In sagittis, ligula consequat tempor aliquet, ligula sapien tristique velit, at gravida eros ante a sem. Maecenas finibus lobortis hendrerit. Praesent vitae nisi risus. Aenean sodales, justo ut aliquet venenatis, metus tellus laoreet leo, eu viverra sapien justo quis velit. Vivamus ultricies orci sed dui pulvinar, vitae commodo tellus posuere. Nulla aliquam faucibus posuere. Morbi eleifend nunc nec mi consequat, nec malesuada ante viverra.
 
-        <Group title="Индикатор">
-          <List>
-            <Cell expandable indicator="При использовании">Геолокация</Cell>
-            <Cell expandable indicator="Всегда">Автопроигрывание медиа</Cell>
-            <Cell expandable indicator="Выключены">Стикеры</Cell>
-          </List>
-        </Group>
+Morbi condimentum tellus vel lacus posuere, auctor vestibulum lacus rhoncus. Maecenas rhoncus dignissim blandit. Donec commodo urna tellus, sit amet aliquam libero vestibulum sit amet. Sed lectus erat, viverra et bibendum tincidunt, elementum non orci. Donec venenatis accumsan felis, eu viverra est vestibulum et. Sed in pellentesque sem. Pellentesque vitae sollicitudin velit. Etiam dignissim eget purus in rutrum. Suspendisse viverra quis urna et venenatis. Quisque tincidunt tincidunt justo, ornare sagittis nisl lobortis vel.
 
-        <Group title="Многострочность">
-          <List>
-            <Cell multiline>A Series of Unfortunate Events, Archer, Brooklyn Nine-Nine, Doctor Who, Game of Thrones</Cell>
-            <Cell multiline>The Avalanches</Cell>
-          </List>
-        </Group>
+Ut accumsan ornare laoreet. Quisque aliquam justo dignissim ipsum efficitur accumsan. Cras lobortis cursus justo sit amet euismod. Maecenas nec nibh magna. Nullam rhoncus neque quam, a scelerisque diam porttitor in. Aenean mattis, metus at pretium vulputate, est leo tincidunt tortor, vitae interdum felis diam sit amet metus. Nunc pulvinar volutpat ante, quis auctor nunc tristique et. Curabitur porta turpis at lobortis accumsan. Cras scelerisque lacinia nulla vel consequat.
+      <Button @click="activeView='view2'">To view2</Button>
+<Button @click="activePanel1='panel2'">To panel2</Button>
+Vivamus efficitur venenatis augue rhoncus lobortis. Mauris tempus condimentum sapien in mattis. Etiam egestas auctor arcu ac laoreet. Nam pharetra, nunc in pharetra vulputate, felis eros porttitor lacus, et placerat nulla justo fermentum nulla. In congue maximus felis, a scelerisque libero hendrerit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nisl a volutpat congue. Cras lacus enim, commodo id arcu quis, mollis mattis enim. Donec massa diam, euismod id hendrerit eu, tempor a urna. Phasellus id tincidunt augue, quis ullamcorper turpis.
 
-        <Group title="Подпись">
-          <List>
-            <Cell description="Depeche Mode">Where’s the Revolution</Cell>
-            <Cell description="The Weeknd">I Feel It Coming (Feat. Daft Punk)</Cell>
-          </List>
-        </Group>
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et mauris ullamcorper, auctor dolor quis, sollicitudin nunc. Nam tempor, justo ut vestibulum fermentum, purus tortor venenatis sem, ac finibus elit nunc ac sem. Nullam porttitor ultricies ultricies. Aenean pretium et dolor ac egestas. Nulla facilisi. Sed eu purus quis justo scelerisque efficitur. Etiam quis interdum magna, eu tincidunt elit. Proin enim ipsum, suscipit condimentum auctor non, pretium nec urna. Nullam sollicitudin massa volutpat ante tincidunt, vel consectetur nisl consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-        <Group title="Большая ячейка">
-          <List>
-            <Cell size="l" description="Друзья в Facebook">
-              <Avatar slot="before" :size="72" />
-              <div slot="bottomContent" style="display: flex;">
-                <Button size="m">Добавить</Button>
-                <Button size="m" level="secondary" style="margin-left: 8px">Скрыть</Button>
-              </div>
-              <vkui-icon slot="asideContent" name="more_horizontal" size="24" />
-              Семён Ефимов
-            </Cell>
-          </List>
-        </Group>
+Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc tincidunt. Fusce rutrum at ligula at aliquet. Vivamus mollis, ipsum in pulvinar semper, nisi nisi dapibus leo, ut porta mauris magna ac eros. Nulla facilisi. Fusce tristique tempus sem ut pretium. Aenean vehicula porta semper. Cras elementum luctus malesuada.
+    </Panel>
+    <Panel id="panel2">
+      <PanelHeader theme="brand">
+        <!-- test 1 c ооочень длинным заголовком  -->
+        <PanelHeaderContent @click="function(){ contextOpened = true; test(); }">
+          <vkui-icon slot="aside" name="done" size="16" />
+          A {{ activeView }}
+        </PanelHeaderContent>
+        <div slot="right">right</div>
+      </PanelHeader>
+      <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
+        <Div style="background-color: #eee;">HeaderContext</Div>
+      </HeaderContext>
+      <Button @click="activeView='view2'">To view2</Button>
+      <div style="background: #ff9090">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis vel velit at elementum. Nulla nisl leo, auctor at libero et, facilisis gravida mauris. In vel purus aliquam lacus suscipit pulvinar et sit amet felis. Integer vel semper dui. Proin posuere, nunc a mattis mattis, arcu nunc hendrerit nisl, non consequat lorem mauris id mi. Morbi condimentum eros consectetur luctus placerat. Aliquam feugiat turpis et hendrerit rhoncus. Proin sed ullamcorper mi. Vestibulum cursus cursus dolor, quis dictum neque pharetra ut. Morbi eu efficitur mi, vitae lacinia metus. Praesent viverra est sagittis nibh tempus pellentesque. Mauris auctor, purus vel consequat aliquet, nibh mi venenatis eros, ac fermentum nisi elit mollis neque. Vivamus massa eros, laoreet at nisl tristique, sodales sollicitudin purus. Curabitur laoreet nunc nisi, lobortis finibus purus pellentesque at. Phasellus ornare, nisl nec faucibus auctor, tellus elit fermentum tortor, id mattis sem augue sed ligula. Duis malesuada dictum nisi ac gravida.
 
-        <Group title="Иконки">
-          <List>
-            <Cell><vkui-icon slot="before" name="about" size="24" />Информация</Cell>
-            <Cell><vkui-icon slot="before" name="services" size="24" />Сервисы</Cell>
-          </List>
-        </Group>
+Etiam congue turpis ut varius dapibus. Nulla hendrerit lectus sit amet urna faucibus malesuada. Etiam ac leo sed sapien tempor pretium et vel tellus. Sed sit amet ipsum congue, laoreet nibh in, congue odio. Nunc lobortis velit nisi, eu vulputate nunc volutpat sit amet. Aliquam suscipit sem dui, ut pretium nunc egestas et. In sagittis, ligula consequat tempor aliquet, ligula sapien tristique velit, at gravida eros ante a sem. Maecenas finibus lobortis hendrerit. Praesent vitae nisi risus. Aenean sodales, justo ut aliquet venenatis, metus tellus laoreet leo, eu viverra sapien justo quis velit. Vivamus ultricies orci sed dui pulvinar, vitae commodo tellus posuere. Nulla aliquam faucibus posuere. Morbi eleifend nunc nec mi consequat, nec malesuada ante viverra.
 
-        <Group title="Чекбоксы">
-          <List>
-            <Cell selectable><Avatar slot="before" :size="40" src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />Артур Стамбульцян</Cell>
-            <Cell removable :onRemove="test"><Avatar slot="before" :size="40" src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />Артур Стамбульцян</Cell>
-          </List>
-        </Group>
-      </Div>
-      <Group :title="slider.toString()" description="Слайдеры">
-        <Slider v-model="slider"
-          :min="0"
-          :max="1" />
-        <br>
-        <Slider v-model="slider"
-          :step="0.2"
-          :min="0"
-          :max="5" />
-      </Group>
-      <Group :title="'Select example: ' + sex" description="Description">
-        <Div>
-          <Select :onChange="() => {activeView='view2'}" placeholder="Выберите пол" v-model="sex">
-            <option value="m">Мужской</option>
-            <option value="f">Женский</option>
-          </Select>
-          <br>
-          <Select placeholder="Выберите пол" v-model="sex">
-            <option value="m">Мужской</option>
-            <option value="f">Женский</option>
-          </Select>
-          <br>
-          <SelectMimicry placeholder="Выберите страну"></SelectMimicry>
-          <br>
-          <SelectMimicry placeholder="Выберите страну">Москва</SelectMimicry>
-        </Div>
-      </Group>
+Morbi condimentum tellus vel lacus posuere, auctor vestibulum lacus rhoncus. Maecenas rhoncus dignissim blandit. Donec commodo urna tellus, sit amet aliquam libero vestibulum sit amet. Sed lectus erat, viverra et bibendum tincidunt, elementum non orci. Donec venenatis accumsan felis, eu viverra est vestibulum et. Sed in pellentesque sem. Pellentesque vitae sollicitudin velit. Etiam dignissim eget purus in rutrum. Suspendisse viverra quis urna et venenatis. Quisque tincidunt tincidunt justo, ornare sagittis nisl lobortis vel.
+
+Ut accumsan ornare laoreet. Quisque aliquam justo dignissim ipsum efficitur accumsan. Cras lobortis cursus justo sit amet euismod. Maecenas nec nibh magna. Nullam rhoncus neque quam, a scelerisque diam porttitor in. Aenean mattis, metus at pretium vulputate, est leo tincidunt tortor, vitae interdum felis diam sit amet metus. Nunc pulvinar volutpat ante, quis auctor nunc tristique et. Curabitur porta turpis at lobortis accumsan. Cras scelerisque lacinia nulla vel consequat.
+      <Button @click="activeView='view2'">To view2</Button>
+<Button @click="activePanel1='panel13'">To panel1</Button>
+Vivamus efficitur venenatis augue rhoncus lobortis. Mauris tempus condimentum sapien in mattis. Etiam egestas auctor arcu ac laoreet. Nam pharetra, nunc in pharetra vulputate, felis eros porttitor lacus, et placerat nulla justo fermentum nulla. In congue maximus felis, a scelerisque libero hendrerit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nisl a volutpat congue. Cras lacus enim, commodo id arcu quis, mollis mattis enim. Donec massa diam, euismod id hendrerit eu, tempor a urna. Phasellus id tincidunt augue, quis ullamcorper turpis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et mauris ullamcorper, auctor dolor quis, sollicitudin nunc. Nam tempor, justo ut vestibulum fermentum, purus tortor venenatis sem, ac finibus elit nunc ac sem. Nullam porttitor ultricies ultricies. Aenean pretium et dolor ac egestas. Nulla facilisi. Sed eu purus quis justo scelerisque efficitur. Etiam quis interdum magna, eu tincidunt elit. Proin enim ipsum, suscipit condimentum auctor non, pretium nec urna. Nullam sollicitudin massa volutpat ante tincidunt, vel consectetur nisl consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc tincidunt. Fusce rutrum at ligula at aliquet. Vivamus mollis, ipsum in pulvinar semper, nisi nisi dapibus leo, ut porta mauris magna ac eros. Nulla facilisi. Fusce tristique tempus sem ut pretium. Aenean vehicula porta semper. Cras elementum luctus malesuada.</div>
     </Panel>
   </VKView>
   <VKView id="view2" :activePanel="activePanel" key="view2">
-    <!-- <ScreenSpinner slot="popout"/> -->
-    <ActionSheet v-if="popout2"
-      slot="popout"
-      :onClose="function(){popout2 = false;}"
-    >
-      <template slot="title">Hi!</template>
-      <template slot="text">I am action sheet</template>
-      <ActionSheetItem @click="test" autoclose>Action</ActionSheetItem>
-      <ActionSheetItem @click="test" autoclose theme="destructive">Sheet</ActionSheetItem>
-      <ActionSheetItem @click="test" :autoclose="true" theme="cancel">Cancel</ActionSheetItem>
-    </ActionSheet>
-    <!-- <Alert v-if="!popout2"
-      slot="popout"
-      :actions="[{
-        title: 'Close',
-        autoclose: true,
-        style: 'destructive'
-      }, {
-        title: 'Cancel',
-        autoclose: true,
-        style: 'cancel'
-      }]"
-      :onClose="function(){popout2 = true;}"
-    >
-      <h2>Hi!</h2>
-      <p>I am alert</p>
-    </Alert> -->
     <Panel id="panel1">
       <PanelHeader theme="brand">
-        <HeaderButton slot="addon" :primary="true" @click="activePanel = 'panel2'">
+        <template slot="left">
+        <HeaderButton slot="addon" :primary="true" @click="activeView = 'view1'">
           Назад
         </HeaderButton>
-        <HeaderButton slot="left" :primary="true" @click="activePanel = 'panel2'">
-          <
-        </HeaderButton>
+      </template>
         <!-- test 1 c ооочень длинным заголовком  -->
         <PanelHeaderContent @click="function(){ contextOpened = true; test(); }">
           <vkui-icon slot="aside" name="done" size="16" />
-          Communities {{ activeView }}
+          B {{ activeView }}
         </PanelHeaderContent>
         <div slot="right">right</div>
       </PanelHeader>
-      <FixedLayout vertical="top">
-        <!-- <Div style="background: #fafafa;">Fixed</Div> -->
-        <Tabs type="buttons" theme="header">
-          <TabsItem :selected="true">1 {{ activeView }}</TabsItem>
-          <TabsItem>Два</TabsItem>
-          <TabsItem @click="test">Три четыре</TabsItem>
-        </Tabs>
-      </FixedLayout>
-      <!-- <Tabbar>
-        <TabbarItem :selected="true">1</TabbarItem>
-        <TabbarItem label="12">Два</TabbarItem>
-        <TabbarItem @click="test">
-          <vkui-icon name="done" size="16" />
-        </TabbarItem>
-      </Tabbar> -->
-      <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
-        <Div style="background-color: #eee;">HeaderContext</Div>
-      </HeaderContext>
-      <Div :style="{ paddingTop: '60px', paddingBottom: '60px' }">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis vel velit at elementum. Nulla nisl leo, auctor at libero et, facilisis gravida mauris. In vel purus aliquam lacus suscipit pulvinar et sit amet felis. Integer vel semper dui. Proin posuere, nunc a mattis mattis, arcu nunc hendrerit nisl, non consequat lorem mauris id mi. Morbi condimentum eros consectetur luctus placerat. Aliquam feugiat turpis et hendrerit rhoncus. Proin sed ullamcorper mi. Vestibulum cursus cursus dolor, quis dictum neque pharetra ut. Morbi eu efficitur mi, vitae lacinia metus. Praesent viverra est sagittis nibh tempus pellentesque. Mauris auctor, purus vel consequat aliquet, nibh mi venenatis eros, ac fermentum nisi elit mollis neque. Vivamus massa eros, laoreet at nisl tristique, sodales sollicitudin purus. Curabitur laoreet nunc nisi, lobortis finibus purus pellentesque at. Phasellus ornare, nisl nec faucibus auctor, tellus elit fermentum tortor, id mattis sem augue sed ligula. Duis malesuada dictum nisi ac gravida.
 
-        <Group title="Group title" description="Group description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-          {{ activeView }}
-          <Button @click="activeView='view1'">Prev View</Button>
-          <Div>
-            <FormLayout @submit="function(e) {e.preventDefault(); test();}">
-              <FormLayoutGroup top="Пароль" bottom="Пароль может содержать только латинские буквы и цифры.">
-                <Button top="top test">123</Button>
-              </FormLayoutGroup>
-              <Button top="top test">{{ popout2 }}</Button>
-              <Radio value="3" v-model="radio1">Radio 1</Radio>
-              <Radio value="4" v-model="radio1" description="description">Radio 2</Radio>
-            </FormLayout>
-            <Div>Radio1 = {{ radio1 }}</Div>
-            <Button @click="activePanel = 'panel2'">Panel 1</Button>
-            <Button @click="openSheet">openSheet</Button>
-            popout2: {{ popout2 }}
-            <a href="javascript:void(0);" @click="openSheet">test</a>
-            <hr>
-            <Button level="primary" @click="openSheet">Test</Button>
-            <Button level="secondary" @click="openSheet">Test</Button>
-            <Button level="tertiary" @click="openSheet">Test</Button>
-            <Button level="outline" @click="openSheet">Test</Button>
-            <Button level="commerce" @click="openSheet">12</Button>
-            <hr>
-            <Avatar type="default" :size="80" src="https://pp.userapi.com/c840137/v840137341/229c0/ydVgaKkHAp8.jpg?ava=1" />
-            <Avatar type="app" :size="80" src="https://pp.userapi.com/c840137/v840137341/229c0/ydVgaKkHAp8.jpg?ava=1" />
-            <Avatar type="image" :size="80" src="https://pp.userapi.com/c840137/v840137341/229c0/ydVgaKkHAp8.jpg?ava=1" />
-            <hr>
-            {{ input }}
-            <Input @focus="test" placeholder="placeholder Focus" v-model="input" />
-            <Input placeholder="placeholder" v-model="input" />
-            <Link href="///">test link</Link>
-            <Checkbox v-model="sw1">Я согласен со всем, что вы <Link href="///">там</Link> понаписали</Checkbox>
-            <VKSwitch v-model="sw1"></VKSwitch> {{ sw1 }}
-            <VKSwitch v-model="sw2"></VKSwitch> {{ sw2 }}
-            <VKSwitch v-model="sw2" disabled="true"></VKSwitch>
-            <Group title="progress">
-              <Progress :value="progress" />
-              <br>
-              <Button @click="progress = progress + 10">Progress +10</Button>
-            </Group>
-            <HorizontalScroll>
-              <div style="display: flex;">
-                <Button level="primary" @click="openSheet">Test</Button>
-                <Button level="secondary" @click="openSheet">Test</Button>
-                <Button level="tertiary" @click="openSheet">Test</Button>
-                <Button level="outline" @click="openSheet">Test</Button>
-                <Button level="commerce" @click="openSheet">Test</Button>
-                <Button level="primary" @click="openSheet">Test</Button>
-                <Button level="secondary" @click="openSheet">Test</Button>
-                <Button level="tertiary" @click="openSheet">Test</Button>
-                <Button level="outline" @click="openSheet">Test</Button>
-                <Button level="commerce" @click="openSheet">Test</Button>
-                <Button level="primary" @click="openSheet">Test</Button>
-                <Button level="secondary" @click="openSheet">Test</Button>
-                <Button level="tertiary" @click="openSheet">Test</Button>
-                <Button level="outline" @click="openSheet">Test</Button>
-                <Button level="commerce" @click="openSheet">Test</Button>
-                <Button level="commerce" @click="openSheet">13</Button>
-              </div>
-            </HorizontalScroll>
-            <InfoRow title="InfoRow">
-              InfoRow
-            </InfoRow>
-            <hr>
-            <File>
-              <vkui-icon slot="before" name="done" size="16" />
-              Тест Файл
-            </File>
-          </Div>
-        </Group>
-        <Group title="Кнопка-ячейка">
-          <CellButton>
-            <vkui-icon slot="before" name="done" size="16" />
-            Добавить новую школу</CellButton>
-          <CellButton>Добавить новую школу</CellButton>
-        </Group>
-        <Group title="Стилизация">
-          <CellButton level="danger">Покинуть беседу</CellButton>
-        </Group>
-        <Group title="Кнопка c иконкой">
-          <CellButton><div slot="before">before</div>Добавить родственника</CellButton>
-        </Group>
-      </Div>
-      <Footer>Footer</Footer>
+Etiam congue turpis ut varius dapibus. Nulla hendrerit lectus sit amet urna faucibus malesuada. Etiam ac leo sed sapien tempor pretium et vel tellus. Sed sit amet ipsum congue, laoreet nibh in, congue odio. Nunc lobortis velit nisi, eu vulputate nunc volutpat sit amet. Aliquam suscipit sem dui, ut pretium nunc egestas et. In sagittis, ligula consequat tempor aliquet, ligula sapien tristique velit, at gravida eros ante a sem. Maecenas finibus lobortis hendrerit. Praesent vitae nisi risus. Aenean sodales, justo ut aliquet venenatis, metus tellus laoreet leo, eu viverra sapien justo quis velit. Vivamus ultricies orci sed dui pulvinar, vitae commodo tellus posuere. Nulla aliquam faucibus posuere. Morbi eleifend nunc nec mi consequat, nec malesuada ante viverra.
+<Button @click="activeView='view1'">To view1</Button>
+Morbi condimentum tellus vel lacus posuere, auctor vestibulum lacus rhoncus. Maecenas rhoncus dignissim blandit. Donec commodo urna tellus, sit amet aliquam libero vestibulum sit amet. Sed lectus erat, viverra et bibendum tincidunt, elementum non orci. Donec venenatis accumsan felis, eu viverra est vestibulum et. Sed in pellentesque sem. Pellentesque vitae sollicitudin velit. Etiam dignissim eget purus in rutrum. Suspendisse viverra quis urna et venenatis. Quisque tincidunt tincidunt justo, ornare sagittis nisl lobortis vel.
+
+Ut accumsan ornare laoreet. Quisque aliquam justo dignissim ipsum efficitur accumsan. Cras lobortis cursus justo sit amet euismod. Maecenas nec nibh magna. Nullam rhoncus neque quam, a scelerisque diam porttitor in. Aenean mattis, metus at pretium vulputate, est leo tincidunt tortor, vitae interdum felis diam sit amet metus. Nunc pulvinar volutpat ante, quis auctor nunc tristique et. Curabitur porta turpis at lobortis accumsan. Cras scelerisque lacinia nulla vel consequat.
+
+Vivamus efficitur venenatis augue rhoncus lobortis. Mauris tempus condimentum sapien in mattis. Etiam egestas auctor arcu ac laoreet. Nam pharetra, nunc in pharetra vulputate, felis eros porttitor lacus, et placerat nulla justo fermentum nulla. In congue maximus felis, a scelerisque libero hendrerit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nisl a volutpat congue. Cras lacus enim, commodo id arcu quis, mollis mattis enim. Donec massa diam, euismod id hendrerit eu, tempor a urna. Phasellus id tincidunt augue, quis ullamcorper turpis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et mauris ullamcorper, auctor dolor quis, sollicitudin nunc. Nam tempor, justo ut vestibulum fermentum, purus tortor venenatis sem, ac finibus elit nunc ac sem. Nullam porttitor ultricies ultricies. Aenean pretium et dolor ac egestas. Nulla facilisi. Sed eu purus quis justo scelerisque efficitur. Etiam quis interdum magna, eu tincidunt elit. Proin enim ipsum, suscipit condimentum auctor non, pretium nec urna. Nullam sollicitudin massa volutpat ante tincidunt, vel consectetur nisl consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc tincidunt. Fusce rutrum at ligula at aliquet. Vivamus mollis, ipsum in pulvinar semper, nisi nisi dapibus leo, ut porta mauris magna ac eros. Nulla facilisi. Fusce tristique tempus sem ut pretium. Aenean vehicula porta semper. Cras elementum luctus malesuada.
+      <Button @click="activePanel='panel2'">To panel2</Button>
     </Panel>
     <Panel id="panel2" theme="white">
       <PanelHeader>
@@ -294,113 +98,43 @@
         </template>
         Товары
       </PanelHeader>
-      <Group title="Group title" description="Group description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-        <Div>
-          <Button @click="activePanel = 'panel3'">Panel 2</Button>
-          <br>
-          <br>
-          {{ activeView }}
-          <Button @click="activeView='view1'">Prev View</Button>
-        </Div>
-        <Div>
-          <Gallery
-            slideWidth="90%"
-            style="height: 150px;"
-            bullets="dark">
-            <div id="slide1"><div style="height: 150px; background-color: blue;"></div></div>
-            <div id="slide2"><div style="height: 150px; background-color: green;"></div></div>
-            <div id="slide3"><div style="height: 150px; background-color: red;"></div></div>
-          </Gallery>
-        </Div>
-      </Group>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis vel velit at elementum. Nulla nisl leo, auctor at libero et, facilisis gravida mauris. In vel purus aliquam lacus suscipit pulvinar et sit amet felis. Integer vel semper dui. Proin posuere, nunc a mattis mattis, arcu nunc hendrerit nisl, non consequat lorem mauris id mi. Morbi condimentum eros consectetur luctus placerat. Aliquam feugiat turpis et hendrerit rhoncus. Proin sed ullamcorper mi. Vestibulum cursus cursus dolor, quis dictum neque pharetra ut. Morbi eu efficitur mi, vitae lacinia metus. Praesent viverra est sagittis nibh tempus pellentesque. Mauris auctor, purus vel consequat aliquet, nibh mi venenatis eros, ac fermentum nisi elit mollis neque. Vivamus massa eros, laoreet at nisl tristique, sodales sollicitudin purus. Curabitur laoreet nunc nisi, lobortis finibus purus pellentesque at. Phasellus ornare, nisl nec faucibus auctor, tellus elit fermentum tortor, id mattis sem augue sed ligula. Duis malesuada dictum nisi ac gravida.
+
+Etiam congue turpis ut varius dapibus. Nulla hendrerit lectus sit amet urna faucibus malesuada. Etiam ac leo sed sapien tempor pretium et vel tellus. Sed sit amet ipsum congue, laoreet nibh in, congue odio. Nunc lobortis velit nisi, eu vulputate nunc volutpat sit amet. Aliquam suscipit sem dui, ut pretium nunc egestas et. In sagittis, ligula consequat tempor aliquet, ligula sapien tristique velit, at gravida eros ante a sem. Maecenas finibus lobortis hendrerit. Praesent vitae nisi risus. Aenean sodales, justo ut aliquet venenatis, metus tellus laoreet leo, eu viverra sapien justo quis velit. Vivamus ultricies orci sed dui pulvinar, vitae commodo tellus posuere. Nulla aliquam faucibus posuere. Morbi eleifend nunc nec mi consequat, nec malesuada ante viverra.
+
+Morbi condimentum tellus vel lacus posuere, auctor vestibulum lacus rhoncus. Maecenas rhoncus dignissim blandit. Donec commodo urna tellus, sit amet aliquam libero vestibulum sit amet. Sed lectus erat, viverra et bibendum tincidunt, elementum non orci. Donec venenatis accumsan felis, eu viverra est vestibulum et. Sed in pellentesque sem. Pellentesque vitae sollicitudin velit. Etiam dignissim eget purus in rutrum. Suspendisse viverra quis urna et venenatis. Quisque tincidunt tincidunt justo, ornare sagittis nisl lobortis vel.
+
+Ut accumsan ornare laoreet. Quisque aliquam justo dignissim ipsum efficitur accumsan. Cras lobortis cursus justo sit amet euismod. Maecenas nec nibh magna. Nullam rhoncus neque quam, a scelerisque diam porttitor in. Aenean mattis, metus at pretium vulputate, est leo tincidunt tortor, vitae interdum felis diam sit amet metus. Nunc pulvinar volutpat ante, quis auctor nunc tristique et. Curabitur porta turpis at lobortis accumsan. Cras scelerisque lacinia nulla vel consequat.
+
+Vivamus efficitur venenatis augue rhoncus lobortis. Mauris tempus condimentum sapien in mattis. Etiam egestas auctor arcu ac laoreet. Nam pharetra, nunc in pharetra vulputate, felis eros porttitor lacus, et placerat nulla justo fermentum nulla. In congue maximus felis, a scelerisque libero hendrerit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nisl a volutpat congue. Cras lacus enim, commodo id arcu quis, mollis mattis enim. Donec massa diam, euismod id hendrerit eu, tempor a urna. Phasellus id tincidunt augue, quis ullamcorper turpis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et mauris ullamcorper, auctor dolor quis, sollicitudin nunc. Nam tempor, justo ut vestibulum fermentum, purus tortor venenatis sem, ac finibus elit nunc ac sem. Nullam porttitor ultricies ultricies. Aenean pretium et dolor ac egestas. Nulla facilisi. Sed eu purus quis justo scelerisque efficitur. Etiam quis interdum magna, eu tincidunt elit. Proin enim ipsum, suscipit condimentum auctor non, pretium nec urna. Nullam sollicitudin massa volutpat ante tincidunt, vel consectetur nisl consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc tincidunt. Fusce rutrum at ligula at aliquet. Vivamus mollis, ipsum in pulvinar semper, nisi nisi dapibus leo, ut porta mauris magna ac eros. Nulla facilisi. Fusce tristique tempus sem ut pretium. Aenean vehicula porta semper. Cras elementum luctus malesuada.
+      <Button @click="activePanel='panel3'">To panel3</Button>
+      
     </Panel>
     <Panel id="panel3">
-      <PanelHeader theme="alternate">Light titlte</PanelHeader>
-      <Button @click="activePanel = 'panel4'">Panel 3</Button>
+      <PanelHeader theme="alternate">Light title</PanelHeader>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis vel velit at elementum. Nulla nisl leo, auctor at libero et, facilisis gravida mauris. In vel purus aliquam lacus suscipit pulvinar et sit amet felis. Integer vel semper dui. Proin posuere, nunc a mattis mattis, arcu nunc hendrerit nisl, non consequat lorem mauris id mi. Morbi condimentum eros consectetur luctus placerat. Aliquam feugiat turpis et hendrerit rhoncus. Proin sed ullamcorper mi. Vestibulum cursus cursus dolor, quis dictum neque pharetra ut. Morbi eu efficitur mi, vitae lacinia metus. Praesent viverra est sagittis nibh tempus pellentesque. Mauris auctor, purus vel consequat aliquet, nibh mi venenatis eros, ac fermentum nisi elit mollis neque. Vivamus massa eros, laoreet at nisl tristique, sodales sollicitudin purus. Curabitur laoreet nunc nisi, lobortis finibus purus pellentesque at. Phasellus ornare, nisl nec faucibus auctor, tellus elit fermentum tortor, id mattis sem augue sed ligula. Duis malesuada dictum nisi ac gravida.
+
+Etiam congue turpis ut varius dapibus. Nulla hendrerit lectus sit amet urna faucibus malesuada. Etiam ac leo sed sapien tempor pretium et vel tellus. Sed sit amet ipsum congue, laoreet nibh in, congue odio. Nunc lobortis velit nisi, eu vulputate nunc volutpat sit amet. Aliquam suscipit sem dui, ut pretium nunc egestas et. In sagittis, ligula consequat tempor aliquet, ligula sapien tristique velit, at gravida eros ante a sem. Maecenas finibus lobortis hendrerit. Praesent vitae nisi risus. Aenean sodales, justo ut aliquet venenatis, metus tellus laoreet leo, eu viverra sapien justo quis velit. Vivamus ultricies orci sed dui pulvinar, vitae commodo tellus posuere. Nulla aliquam faucibus posuere. Morbi eleifend nunc nec mi consequat, nec malesuada ante viverra.
+
+Morbi condimentum tellus vel lacus posuere, auctor vestibulum lacus rhoncus. Maecenas rhoncus dignissim blandit. Donec commodo urna tellus, sit amet aliquam libero vestibulum sit amet. Sed lectus erat, viverra et bibendum tincidunt, elementum non orci. Donec venenatis accumsan felis, eu viverra est vestibulum et. Sed in pellentesque sem. Pellentesque vitae sollicitudin velit. Etiam dignissim eget purus in rutrum. Suspendisse viverra quis urna et venenatis. Quisque tincidunt tincidunt justo, ornare sagittis nisl lobortis vel.
+
+Ut accumsan ornare laoreet. Quisque aliquam justo dignissim ipsum efficitur accumsan. Cras lobortis cursus justo sit amet euismod. Maecenas nec nibh magna. Nullam rhoncus neque quam, a scelerisque diam porttitor in. Aenean mattis, metus at pretium vulputate, est leo tincidunt tortor, vitae interdum felis diam sit amet metus. Nunc pulvinar volutpat ante, quis auctor nunc tristique et. Curabitur porta turpis at lobortis accumsan. Cras scelerisque lacinia nulla vel consequat.
+
+Vivamus efficitur venenatis augue rhoncus lobortis. Mauris tempus condimentum sapien in mattis. Etiam egestas auctor arcu ac laoreet. Nam pharetra, nunc in pharetra vulputate, felis eros porttitor lacus, et placerat nulla justo fermentum nulla. In congue maximus felis, a scelerisque libero hendrerit at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nisl a volutpat congue. Cras lacus enim, commodo id arcu quis, mollis mattis enim. Donec massa diam, euismod id hendrerit eu, tempor a urna. Phasellus id tincidunt augue, quis ullamcorper turpis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut et mauris ullamcorper, auctor dolor quis, sollicitudin nunc. Nam tempor, justo ut vestibulum fermentum, purus tortor venenatis sem, ac finibus elit nunc ac sem. Nullam porttitor ultricies ultricies. Aenean pretium et dolor ac egestas. Nulla facilisi. Sed eu purus quis justo scelerisque efficitur. Etiam quis interdum magna, eu tincidunt elit. Proin enim ipsum, suscipit condimentum auctor non, pretium nec urna. Nullam sollicitudin massa volutpat ante tincidunt, vel consectetur nisl consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc tincidunt. Fusce rutrum at ligula at aliquet. Vivamus mollis, ipsum in pulvinar semper, nisi nisi dapibus leo, ut porta mauris magna ac eros. Nulla facilisi. Fusce tristique tempus sem ut pretium. Aenean vehicula porta semper. Cras elementum luctus malesuada.
+      <Button @click="activePanel = 'panel4'">To panel4</Button>
     </Panel>
     <Panel id="panel4"><Button @click="activePanel = 'panel5'">Panel 4</Button></Panel>
     <Panel id="panel5"><Button @click="activePanel = 'panel1'">Panel 5</Button></Panel>
-    <!-- <template slot="popout">
-      <ActionSheet v-if="popout2"
-        title="Hi!"
-        text="I am action sheet"
-        :onClose="() => popout2 = false"
-      >
-        <ActionSheetItem @click="test" autoclose>Action</ActionSheetItem>
-        <ActionSheetItem @click="test" autoclose theme="destructive">Sheet</ActionSheetItem>
-        <ActionSheetItem @click="test" autoclose theme="cancel">Cancel</ActionSheetItem>
-      </ActionSheet>
-    </template> -->
   </VKView>
-</Epic>  
-<!-- </Root> -->
-
-
-
-  <!-- <hr>
-  <Button level="2">
-    {{ popout2 }}
-    <Button level="2" id="3" size="l">level 2</Button>
-    <Button level="2">level 2</Button>
-  </Button>
-  
-    <a href="javascript:void(0);" @click="test">111111111</a>
-    <div @dragstart="test">2222222222</div>
-
-    <Tappable>Tappable</Tappable> 
-
-    <Touch t="s">
-      Touch
-    </Touch>
-
-    <hr> -->
-
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <div style="text-align: center;">
-      <Button @dragstart.native="test" fack="fack" size="l">default click test s</Button>
-    </div>
-
-    <hr>
-
-    <br>
-    <Button @click="test" level="1">level 1</Button>
-    <Button level="2">level 2</Button>
-    <Button level="3">level 3</Button>
-    <Button level="sell">level sell</Button>
-    <Button level="buy">level buy</Button>
-    <Button level="primary">level primary</Button>
-    <Button level="danger">level danger</Button>
-    <Button type="cell" level="buy">level sell</Button>
-    <br>
-    <Button size="m">size m</Button>
-    <Button size="l">size l</Button>
-    <Button size="xl">size xl</Button>
-    <br>
-    <Button type="default">type default</Button>
-    <Button type="cell">type cell</Button>
-    <br>
-    <Button type="cell" align="left">align left</Button>
-    <Button type="cell" align="center">align center</Button>
-    <Button type="cell" align="right">align right</Button>
-    <br>
-    <Button :stretched="true">stretched</Button>
-    <hr>
-    <Header level="1">Header level 1</Header>
-    <Header level="2" aside="Aside content">Header level 2</Header>
-    <hr>
-    <Group title="Group title" description="Group description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-      <List>
-        <Cell>
-          One
-        </Cell>
-        <Cell>
-          Two
-        </Cell>
-        <Cell>
-          Three
-        </Cell>
-      </List>
-    </Group> -->
+</Epic>
   </div>
 </template>
 
@@ -457,6 +191,7 @@ export default {
   name: 'app',
   data: () => ({
     activeView: 'view1',
+    activePanel1: 'panel13',
     activePanel: 'panel1',
     popout2: false,
     contextOpened: false,
