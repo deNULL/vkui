@@ -50,7 +50,7 @@ Vue.component('Panel', Panel)
 
 Отсутствующие компоненты:
 
-* Entity
+* ~~Entity~~ (является устаревшим)
 * Search
 * FixedTabs
 * Tooltip
