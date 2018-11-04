@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<Root :activeView="activeView">
+<Epic :activeStory="activeView">
   <VKView id="view1"  :activePanel="activePanel1" key="view1">
     <Panel id="panel13">
       <PanelHeader theme="brand">
@@ -134,11 +134,12 @@ Quisque in laoreet augue. Nam feugiat nisl sit amet ex aliquet, nec tempor nunc 
     <Panel id="panel4"><Button @click="activePanel = 'panel5'">Panel 4</Button></Panel>
     <Panel id="panel5"><Button @click="activePanel = 'panel1'">Panel 5</Button></Panel>
   </VKView>
-</Root>
+</Epic>
   </div>
 </template>
 
 <script>
+import Epic from './components/Epic/Epic'
 import Root from './components/Root/Root'
 import VKView from './components/VKView/VKView'
 import Panel from './components/Panel/Panel'
@@ -204,6 +205,7 @@ export default {
     slider: .5,
   }),
   components: {
+    Epic,
     Root,
     VKView,
     Panel,

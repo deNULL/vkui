@@ -141,6 +141,8 @@ export default {
             nextViewElement.querySelector('.View__panel').scrollTop = this.state.scrolls[this.state.nextView];
           }
           this.waitAnimationFinish(this.state.isBack ? prevViewElement : nextViewElement, this.onAnimationEnd);
+        } else {
+          this.window.scrollTo(0, this.state.scrolls[this.state.activeView]);
         }
       })
     },
