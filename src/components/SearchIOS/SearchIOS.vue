@@ -6,6 +6,7 @@
           <input
             :id="`search-${searchId}`"
             v-bind="inputProps"
+            ref="inputEl"
             type="text"
             class="Search__input"
             :value="value"
@@ -28,7 +29,7 @@
             </div>
           </label>
         </div>
-        <div class="Search__after" @click="onCancel">
+        <div class="Search__after" @click="cancel">
           <div class="Search__after-in" v-if="$scopedSlots.after">
             <slot name="after"></slot>
           </div>
@@ -94,7 +95,7 @@ export default {
     }
   },
   methods: {
-    onCancel() {
+    cancel() {
       this.$emit('input', '')
     },
     onFocus(event) {

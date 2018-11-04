@@ -18,6 +18,8 @@
       <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
         <Div style="background-color: #eee;">HeaderContext</Div>
       </HeaderContext>
+      <Search v-model="searchText"></Search>
+      <br/>
 <Button @click="activeView='view2'">To view2</Button>
 <Button @click="activePanel1='panel2'">To panel2</Button>
 
