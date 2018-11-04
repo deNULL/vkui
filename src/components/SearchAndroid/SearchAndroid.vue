@@ -19,9 +19,9 @@
         />
       </div>
 
-      <div class="Search__after" v-if="value">
-        <vkui-icon name="cancel" size="24" @click="cancel" v-if="theme === 'default'"/>
-        <HeaderButton @click="cancel" v-else-if="theme === 'header'">
+      <div class="Search__after" @click="cancel" v-if="value">
+        <vkui-icon name="cancel" size="24" v-if="theme === 'default'"/>
+        <HeaderButton v-else-if="theme === 'header'">
           <vkui-icon name="cancel" size="24"/>
         </HeaderButton>
       </div>
@@ -84,6 +84,7 @@ export default {
   },
   methods: {
     cancel() {
+      console.log('canceled')
       this.$emit('input', '')
     },
   },
