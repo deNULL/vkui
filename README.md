@@ -51,7 +51,6 @@ Vue.component('Panel', Panel)
 Отсутствующие компоненты:
 
 * ~~Entity~~ (является устаревшим)
-* Search
-* FixedTabs
+* ~~FixedTabs~~ (является устаревшим)
 * Tooltip
 * RangeSlider
