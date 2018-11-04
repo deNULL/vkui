@@ -13,7 +13,7 @@
             @focus="onFocus"
             @blur="onBlur"
           />
-          <div class="Search__after-width" v-if="$slots.after">
+          <div class="Search__after-width" v-if="$scopedSlots.after">
             <slot name="after"></slot>
           </div>
           <div class="Search__after-width" v-else>
@@ -29,7 +29,7 @@
           </label>
         </div>
         <div class="Search__after" @click="onCancel">
-          <div class="Search__after-in" v-if="$slots.after">
+          <div class="Search__after-in" v-if="$scopedSlots.after">
             <slot name="after"></slot>
           </div>
           <div class="Search__after-in" v-else>
@@ -51,7 +51,6 @@ let searchId = 0;
 export default {
   props: {
     className: String,
-    defaultValue: String,
     value: String,
     placeholder: {
       type: String,
@@ -64,7 +63,6 @@ export default {
       default: 'default',
     },
   },
-  // slots: before, after, placeholder
   data: function() {
     return {
       isFocused: false,
@@ -77,7 +75,7 @@ export default {
         [`Search--${this.theme}`]: true,
         'Search--focused': this.isFocused,
         'Search--has-value': this.value,
-        'Search--has-after': this.$slots.after
+        'Search--has-after': this.$scopedSlots.after
       }, this.className);
     },
     searchId() {
@@ -87,11 +85,9 @@ export default {
       const {
         className,
         theme,
-        defaultValue,
         value,
         placeholder,
         after,
-        getRef,
         ...inputProps
       } = this.$attrs;
       return inputProps;
@@ -99,7 +95,7 @@ export default {
   },
   methods: {
     onCancel() {
-
+      this.$emit('input', '')
     },
     onFocus(event) {
       this.isFocused = true

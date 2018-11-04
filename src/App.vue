@@ -4,7 +4,9 @@
   <VKView id="view1"  :activePanel="activePanel1" key="view1">
     <Panel id="panel13">
       <PanelHeader theme="brand">
-      <Search theme="header"></Search>
+      <Search theme="header" v-model="searchText" placeholder="плейсхолдер">
+        <div slot="after">Clear</div>
+      </Search>
 
         <!-- test 1 c ооочень длинным заголовком  -->
         <PanelHeaderContent @click="function(){ contextOpened = true; test(); }">
@@ -137,6 +139,7 @@ export default {
     activeStory: 'view1',
     sex: undefined,
     slider: .5,
+    searchText:'ttt',
   }),
   components: {
     Root,

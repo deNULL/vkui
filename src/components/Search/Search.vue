@@ -1,7 +1,3 @@
-<template>
-  <component :is="isIOS ? 'SearchIOS' : 'SearchAndroid'" v-bind="$attrs" v-on="$listeners"></component>
-</template>
-
 <script>
 import SearchIOS from '../SearchIOS/SearchIOS';
 import SearchAndroid from '../SearchAndroid/SearchAndroid';
@@ -17,9 +13,8 @@ export default {
     SearchIOS, SearchAndroid
   },
   props: {
-    className: String,
-    getRootRef: Function,
-    autoComplete: String,
+    placeholder: String,
+    value: String,
   },
   computed: {
     isIOS() {
@@ -28,6 +23,19 @@ export default {
     classNames () {
       return classnames(baseClassNames);
     }
+  },
+  render(createElement) {
+    return createElement(this.isIOS ? 'SearchIOS' : 'SearchAndroid', {
+      props: Object.assign({}, this.$attrs, {
+        value: this.value
+      }),
+      on: Object.assign({}, this.$listeners, {
+        input: (value) => this.$emit('input', value)
+      }),
+      scopedSlots: {
+        after: props => this.$slots.after
+      },
+    })
   }
 }
 </script>
