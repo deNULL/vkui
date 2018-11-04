@@ -13,7 +13,6 @@ export default {
     SearchIOS, SearchAndroid
   },
   props: {
-    placeholder: String,
     value: String,
   },
   computed: {
