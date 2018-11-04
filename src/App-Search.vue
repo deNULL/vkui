@@ -4,6 +4,9 @@
   <VKView id="view1"  :activePanel="activePanel1" key="view1">
     <Panel id="panel13">
       <PanelHeader theme="brand">
+      <Search theme="header" v-model="searchText" placeholder="плейсхолдер">
+        <div slot="after">Clear</div>
+      </Search>
 
         <!-- test 1 c ооочень длинным заголовком  -->
         <PanelHeaderContent @click="function(){ contextOpened = true; test(); }">
@@ -15,6 +18,8 @@
       <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
         <Div style="background-color: #eee;">HeaderContext</Div>
       </HeaderContext>
+      <Search v-model="searchText"></Search>
+      <br/>
 <Button @click="activeView='view2'">To view2</Button>
 <Button @click="activePanel1='panel2'">To panel2</Button>
 
