@@ -4,6 +4,7 @@
       <div class="Panel__in-before"></div>
         <slot></slot>
       <div class="Panel__in-after"></div>
+      <div class="PanelTooltipOutlet" style="position: absolute"></div>
     </div>
   </div>
 </template>

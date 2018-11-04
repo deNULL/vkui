@@ -15,10 +15,27 @@
       <HeaderContext :opened="contextOpened" :onClose="function(){ contextOpened = false; test(); }">
         <Div style="background-color: #eee;">HeaderContext</Div>
       </HeaderContext>
-<Button @click="activeView='view2'">To view2</Button>
-<Button @click="activePanel1='panel2'">To panel2</Button>
 
-
+      <Group>
+        <List>
+          <Cell>Музыка</Cell>
+          <Cell>Видео</Cell>
+          <Cell>Игры</Cell>
+          <Cell>Закладки</Cell>
+          <Cell>Документы</Cell>
+          <Cell>Денежные переводы</Cell>
+        </List>
+      </Group>
+      <Group>
+        <Tooltip
+          text="У нас тут brand new функционал подвезли. Зацените!"
+          :offsetX="10">
+          <Cell>VK Pay</Cell>
+        </Tooltip>
+      </Group>
+<Button>VK Pay</Button><Button>VK Pay</Button>
+<div style="float:right">
+    </div>
     </Panel>
     <Panel id="panel2">
       <PanelHeader theme="brand">
@@ -114,7 +131,7 @@ import Tabbar from './components/Tabbar/Tabbar'
 import TabbarItem from './components/TabbarItem/TabbarItem'
 import Slider from './components/Slider/Slider'
 
-import Search from './components/Search/Search'
+import Tooltip from './components/Tooltip/Tooltip'
 
 
 import '@urapywka/vkui-icons'
@@ -181,7 +198,7 @@ export default {
     Tabbar,
     TabbarItem,
     Slider,
-    Search
+    Tooltip
   },
   methods: {
     test (e) {

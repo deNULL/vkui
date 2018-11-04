@@ -13,6 +13,7 @@
           <slot name="aside"></slot>
         </div>
       </div>
+      <div class="PanelHeaderTooltipOutlet" style="position: fixed"></div>
     </component>
   </div>
 </template>

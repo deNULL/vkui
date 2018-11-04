@@ -5,6 +5,7 @@
     :style="{ position: state.position, top: state.top, paddingBottom }"
   >
     <div class="FixedLayout__in"><slot></slot></div>
+    <div class="FixedLayoutTooltipOutlet" style="position: fixed"></div>
   </div>
 </template>
 

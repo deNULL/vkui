@@ -46,6 +46,9 @@ import Tappable from './Tappable/Tappable'
 import Textarea from './Textarea/Textarea'
 import Touch from './Touch/Touch'
 import VKView from './VKView/VKView'
+import Search from './Search/Search'
+import Tooltip from './Tooltip/Tooltip'
+import RangeSlider from './RangeSlider/RangeSlider'
 
 
 
@@ -108,6 +111,9 @@ const Components = {
   TabsItem,
   Tabbar,
   TabbarItem,
+  Search,
+  Tooltip,
+  RangeSlider
 }
 
 Object.keys(Components).forEach(name => {
