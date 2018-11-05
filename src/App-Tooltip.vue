@@ -16,16 +16,26 @@
         <Div style="background-color: #eee;">HeaderContext</Div>
       </HeaderContext>
 
-      <FormLayout>
-        <RangeSlider
-          top="Uncontrolled"
-          :min="10"
-          :max="20"
-          :step="1"
-          v-model="sliderRange"
-          :defaultValue="[12, 16]"
-        />
-      </FormLayout>
+      <Group>
+        <List>
+          <Cell>Музыка</Cell>
+          <Cell>Видео</Cell>
+          <Cell>Игры</Cell>
+          <Cell>Закладки</Cell>
+          <Cell>Документы</Cell>
+          <Cell>Денежные переводы</Cell>
+        </List>
+      </Group>
+      <Group>
+        <Tooltip
+          text="У нас тут brand new функционал подвезли. Зацените!"
+          :offsetX="10">
+          <Cell>VK Pay</Cell>
+        </Tooltip>
+      </Group>
+<Button>VK Pay</Button><Button>VK Pay</Button>
+<div style="float:right">
+    </div>
     </Panel>
     <Panel id="panel2">
       <PanelHeader theme="brand">
@@ -121,7 +131,7 @@ import Tabbar from './components/Tabbar/Tabbar'
 import TabbarItem from './components/TabbarItem/TabbarItem'
 import Slider from './components/Slider/Slider'
 
-import RangeSlider from './components/RangeSlider/RangeSlider'
+import Tooltip from './components/Tooltip/Tooltip'
 
 
 import '@urapywka/vkui-icons'
@@ -144,7 +154,6 @@ export default {
     sex: undefined,
     slider: .5,
     searchText:'ttt',
-    sliderRange: [12, 16],
   }),
   components: {
     Root,
@@ -189,7 +198,7 @@ export default {
     Tabbar,
     TabbarItem,
     Slider,
-    RangeSlider
+    Tooltip
   },
   methods: {
     test (e) {

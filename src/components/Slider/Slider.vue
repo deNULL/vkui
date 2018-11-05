@@ -103,7 +103,7 @@ export default {
   methods: {
     onStart (e) {
       const absolutePosition = this.validateAbsolute(e.startX - this.state.containerLeft);
-      const percentPosition = this.absoluteToPecent(absolutePosition);
+      const percentPosition = this.absoluteToPercent(absolutePosition);
 
       this.onChangeMethod(this.percentToValue(percentPosition));
 
@@ -121,7 +121,7 @@ export default {
 
     onMoveX (e) {
       const absolutePosition = this.validateAbsolute(this.state.startX + (e.shiftX || 0));
-      const percentPosition = this.absoluteToPecent(absolutePosition);
+      const percentPosition = this.absoluteToPercent(absolutePosition);
 
       this.onChangeMethod(this.percentToValue(percentPosition));
 
@@ -165,7 +165,7 @@ export default {
 
     validatePercent (percent) { return Math.max(0, Math.min(percent, 100)); },
 
-    absoluteToPecent (absolute) { return absolute * 100 / this.state.containerWidth; },
+    absoluteToPercent (absolute) { return absolute * 100 / this.state.containerWidth; },
 
     percentToValue (percent) {
       const res = percent * (this.max - this.min) / 100 + this.min;
