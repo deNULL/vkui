@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 import ActionSheet from './ActionSheet/ActionSheet'
 import ActionSheetItem from './ActionSheetItem/ActionSheetItem'
 import Alert from './Alert/Alert'
