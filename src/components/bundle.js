@@ -1,3 +1,5 @@
+import Vue from "vue";
+
 import ActionSheet from './ActionSheet/ActionSheet'
 import ActionSheetItem from './ActionSheetItem/ActionSheetItem'
 import Alert from './Alert/Alert'
@@ -51,10 +53,15 @@ import PortalVue from 'portal-vue'
 
 Vue.use(PortalVue)
 
+import '@urapywka/vkui-icons'
+import '@urapywka/vkui-icons/dist/vkui-icons.css'
+
 import '../styles/common.css';
 import '../styles/constants.css';
+import '../styles/generated/palette.css';
+import '../styles/generated/client_light.css';
 
-export {
+const Components = {
   Root,
   VKView,
   Panel,
@@ -105,5 +112,11 @@ export {
   Tooltip,
   RangeSlider
 }
+
+Object.keys(Components).forEach(name => {
+  Vue.component(name, Components[name]);
+});
+
+export default Components;
 
 export { platform, ANDROID, IOS } from '../lib/platform';
