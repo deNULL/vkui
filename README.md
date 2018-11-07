@@ -25,9 +25,6 @@ import '@denull/vkui/src/styles/generated/client_light.css';
 
 import { Button, Epic, VKView, Panel } from "@denull/vkui/src/components"
 
-import '@urapywka/vkui-icons'
-import '@urapywka/vkui-icons/dist/vkui-icons.css'
-
 Vue.component('Button', Button)
 Vue.component('Epic', Epic)
 Vue.component('VKView', VKView)

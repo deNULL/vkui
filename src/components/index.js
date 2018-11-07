@@ -51,6 +51,9 @@ import PortalVue from 'portal-vue'
 
 Vue.use(PortalVue)
 
+import '@urapywka/vkui-icons'
+import '@urapywka/vkui-icons/dist/vkui-icons.css'
+
 import '../styles/common.css';
 import '../styles/constants.css';
 
