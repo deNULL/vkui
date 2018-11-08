@@ -49,6 +49,7 @@ export default {
       return ['date', 'datetime-local', 'time', 'month'].indexOf(this.type) > -1 && this.isWebView ? this.placeholder : null;
     }
   },
+  inheritAttrs: false,
   props: {
     value: {
       type: [String, Number]
