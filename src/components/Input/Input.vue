@@ -6,6 +6,7 @@
       ref="input"
       :placeholder="customPlaceholder ? null : placeholder"
       :value="value"
+      :type="type"
       @input="changeHandler"
       @focus="focusHandler"
     />
@@ -24,7 +25,7 @@ const baseClassName = getClassName('Input');
 
 export default {
   data: () => ({
-    
+
   }),
   inject: {
     isWebView: {
